@@ -1,0 +1,5 @@
+{
+    "github.copilot.editor.enableAutoCompletions": true,
+    "github.copilot.chat.scopeSelection": true,
+    "git.optimisticUpdate": true
+}
