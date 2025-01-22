@@ -1,8 +1,0 @@
-#!/usr/bin/python3
-
-import random
-
-nombre_secret = random.randint(1, 100)
-print("Bienvenue à vous, chercheur de nombre !")
-proposition = None
-input("Quel est votre proposition ?")
