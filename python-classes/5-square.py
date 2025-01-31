@@ -35,7 +35,8 @@ class Square:
     def area(self):
         return self.__size ** 2
 
-    """Prints the square with the character '#'. If the size is 0, it prints an empty line."""
+    """Prints the square with the character '#'
+    If the size is 0, it prints an empty line."""
     def my_print(self):
         if self.__size > 0:
             for x in range(self.__size):
