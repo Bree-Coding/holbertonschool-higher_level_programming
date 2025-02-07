@@ -16,7 +16,8 @@ class Rectangle(BaseGeometry):
             height (int): The height of the rectangle.
         """
         self.integer_validator("width", width)
-        self.integer_validator("heighr", height)
+        self.integer_validator("height", height)
+
         self.__width = width
         self.__height = height
 
@@ -34,4 +35,4 @@ class Rectangle(BaseGeometry):
         Returns:
             str: The string representation of the square.
         """
-        return ("[rectangle] {}/{}".format(self.__width, self.__height))
+        return ("[Rectangle] {}/{}".format(self.__width, self.__height))
