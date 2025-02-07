@@ -4,7 +4,7 @@ Printes sorted list
 =====================
 
 My_list is a class that inherits from list
->>> my_list = __import__('1-my_list').MyList()
+>>> my_list = __import__('1-my_list').MyList
 
 Test 1: numbers with 1 digit and 2 times the same number
     >>> my_list.append(2)
