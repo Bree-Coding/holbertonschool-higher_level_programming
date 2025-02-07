@@ -2,6 +2,7 @@
 
 """Module that defines a base geometry class."""
 
+
 class BaseGeometry:
     """Base class for geometry objects."""
 

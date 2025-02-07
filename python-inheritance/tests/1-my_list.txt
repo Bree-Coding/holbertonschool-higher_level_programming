@@ -1,0 +1,100 @@
+=====================
+TEST FOR 1-my_list.py
+Printes sorted list
+=====================
+
+My_list is a class that inherits from list
+>>> my_list = __import__('1-my_list').MyList()
+
+Test 1: numbers with 1 digit and 2 times the same number
+    >>> my_list.append(2)
+    >>> my_list.append(4)
+    >>> my_list.append(5)
+    >>> my_list.append(1)
+    >>> my_list.append(5)
+    >>> print(my_list)
+[2, 4, 5, 1, 5]
+
+>>> my_list.print_sorted()
+[1, 2, 4, 5, 5]
+
+Test 2: numbers with 2 digits
+    >>> my_list.append(23)
+    >>> my_list.append(46)
+    >>> my_list.append(57)
+    >>> my_list.append(15)
+    >>> my_list.append(58)
+    >>> print(my_list)
+[23, 46, 57, 15, 58]
+
+>>> my_list.print_sorted()
+[15, 23, 46, 57, 58]
+
+Test 3: numbers with many digits
+    >>> my_list.append(235415413)
+    >>> my_list.append(5854151245154121456)
+    >>> my_list.append(57645784576542)
+    >>> my_list.append(465454415645)
+    >>> my_list.append(15546545654224424)
+    >>> print(my_list)
+[235415413, 5854151245154121456, 57645784576542, 465454415645, 15546545654224424]
+
+>>> my_list.print_sorted()
+[235415413, 465454415645, 57645784576542, 15546545654224424, 5854151245154121456]
+
+Test 4: empty list
+    >>> print(my_list)
+[]
+
+>>> my_list.print_sorted()
+[]
+
+Test 5: negative numbers
+    >>> my_list.append(-2)
+    >>> my_list.append(-4)
+    >>> my_list.append(-5)
+    >>> my_list.append(-1)
+    >>> my_list.append(-5)
+    >>> print(my_list)
+[-2, -4, -5, -1, -5]
+
+Test 6: negative numbers with many digits
+    >>> my_list.append(-235415413)
+    >>> my_list.append(-5854151245154121456)
+    >>> my_list.append(-57645784576542)
+    >>> my_list.append(-465454415645)
+    >>> my_list.append(-15546545654224424)
+    >>> print(my_list)
+[-2, -4, -5, -1, -5, -235415413, -5854151245154121456, -57645784576542, -465454415645, -15546545654224424]
+
+>>> my_list.print_sorted()
+[-15546545654224424, -5854151245154121456, -235415413, -57645784576542, -465454415645, -5, -5, -4, -2, -1]
+
+Test 7: already sorted list
+    >>> my_list.append(1)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(4)
+    >>> my_list.append(5)
+    >>> print(my_list)
+[1, 2, 3, 4, 5]
+
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+Test 8: list with only one element
+    >>> my_list.append(1)
+    >>> print(my_list)
+[1]
+
+>>> my_list.print_sorted()
+[1]
+
+Test 9: list with characters
+    >>> my_list.append('a')
+    >>> my_list.append('b')
+    >>> my_list.append('c')
+    >>> my_list.append('d')
+    >>> my_list.append('e')
+    >>> print(my_list)
+[a, b, c, d, e]
