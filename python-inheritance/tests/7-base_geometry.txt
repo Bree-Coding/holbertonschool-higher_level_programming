@@ -2,10 +2,8 @@
 How to Use 7-base_geometry.py
 ===================================
 
-
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
-
 
 The class has two methods:
 
@@ -14,55 +12,42 @@ The class has two methods:
 
 This method is not implemented and should raise an Exception:
 
-    >>> bg.area()
-    Traceback (most recent call last):
-    Exception: area() is not implemented
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[Exception] area() is not implemented
 
 2. integer_validator(self, name, value)
-Test 1: with good parameters
-    >>>try:
-        >>bg.integer_validator("name", "John")
-    >>>except Exception as e:
-        >>>print("[{}] {}".format(e.__class__.__name__, e))
+---------------------------------------
 
-Test 2: with a non integer value
-    >>>try:
-        >>bg.integer_validator("name", 72)
-    >>>except Exception as e:
-        >>>print("[{}] {}".format(e.__class__.__name__, e))
-    TypeError: name must be an integer
+Test 1: with a valid integer
+>>> bg.integer_validator("my_int", 12)
+
+Test 2: with a non-integer value
+>>> try:
+...     bg.integer_validator("name", "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
 
 Test 3: with a decimal value
-    >>>try:
-        >>bg.integer_validator("name", 72.5)
-    >>>except Exception as e:
-        >>>print("[{}] {}".format(e.__class__.__name__, e))
-    TypeError: name must be an integer
+>>> try:
+...     bg.integer_validator("name", 72.5)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
 
 Test 4: with a negative value
-    >>>try:
-        >>bg.integer_validator("name", -72)
-    >>>except Exception as e:
-        >>>print("[{}] {}".format(e.__class__.__name__, e))
-    ValueError: name must be greater than 0
+>>> try:
+...     bg.integer_validator("name", -72)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] name must be greater than 0
 
 Test 5: with a zero value
-    >>>try:
-        >>bg.integer_validator("name", 0)
-    >>>except Exception as e:
-        >>>print("[{}] {}".format(e.__class__.__name__, e))
-    ValueError: name must be greater than 0
-
-Test 6: with a character
-    >>>try:
-        >>bg.integer_validator("name", "J")
-    >>>except Exception as e:
-        >>>print("[{}] {}".format(e.__class__.__name__, e))
-    TypeError: name must be an integer
-
-Test 7: with a string
-    >>>try:
-        >>bg.integer_validator("name", "John")
-    >>>except Exception as e:
-        >>>print("[{}] {}".format(e.__class__.__name__, e))
-    TypeError: name must be an integer
+>>> try:
+...     bg.integer_validator("name", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] name must be greater than 0
