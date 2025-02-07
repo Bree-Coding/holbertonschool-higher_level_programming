@@ -1,12 +1,24 @@
 ===================================
-Test BaseGeometry class
-Prints a TypeError and a ValueError
+How to Use 7-base_geometry.py
 ===================================
 
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
+
+The class has two methods:
+
+1. area(self)
+-------------
+
+This method is not implemented and should raise an Exception:
+
+    >>> bg.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+2. integer_validator(self, name, value)
 Test 1: with good parameters
     >>>try:
         >>bg.integer_validator("name", "John")
