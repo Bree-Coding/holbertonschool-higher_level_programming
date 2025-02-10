@@ -10,7 +10,6 @@ Try to load the existing list from the JSON file
 """
 
 
-
 try:
     lst = load_from_json_file("add_item.json")
     """
