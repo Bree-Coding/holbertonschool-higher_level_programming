@@ -26,4 +26,4 @@ class Student():
         """
           Returns a dictionary representation of the Student instance.
         """
-        return obj.__dict__
+        return self.__dict__
