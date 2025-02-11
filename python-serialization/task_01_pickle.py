@@ -7,6 +7,10 @@ import pickle
 
 
 class CustomObject:
+    """
+    A class to represent a custom object with attributes name, age,
+    and is_student.
+    """
     def __init__(self, name, age, is_student):
         """
         Initialize a CustomObject with the specified attributes.
@@ -27,13 +31,19 @@ class CustomObject:
         """
         Serialize the given data and save it to the specified file.
         """
-        with open(filename, 'wb') as file:
-            pickle.dump(self, file)
+        try:
+            with open(filename, 'wb') as file:
+                pickle.dump(self, file)
+        except Exception:
+            return None
 
     @classmethod
     def deserialize(cls, filename):
         """
         Load and deserialize data from the specified file.
         """
-        with open(filename, 'rb') as file:
-            return pickle.load(file)
+        try:
+            with open(filename, 'rb') as file:
+                return pickle.load(file)
+        except Exception:
+            return None
