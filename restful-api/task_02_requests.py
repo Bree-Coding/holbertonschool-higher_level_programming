@@ -29,8 +29,8 @@ def fetch_and_save_posts():
             writer = csv.DictWriter(file, fieldnames=['id', 'title', 'body'])
             writer.writeheader()
             for post in json_posts:
-                filtered_post = {key: post[key] for key in ['id', 'title', 'body']}
-                writer.writerow(filtered_post)
+                filtered = {key: post[key] for key in ['id', 'title', 'body']}
+                writer.writerow(filtered)
 
 
 if __name__ == '__main__':
