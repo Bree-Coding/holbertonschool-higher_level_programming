@@ -1,9 +1,15 @@
 #!/usr/bin/python3
 
+"""
+Function to fetch and print posts from the API
+"""
 import requests
 import csv
 
 def fetch_and_print_posts():
+    """
+    Function to fetch and print posts from the API
+    """
     response = requests.get('https://jsonplaceholder.typicode.com/posts')
     status_code = response.status_code
     print(f"Status code: {status_code}")
@@ -13,8 +19,10 @@ def fetch_and_print_posts():
             print(post['title'])
 
 def fetch_and_save_posts():
-    url = 'https://jsonplaceholder.typicode.com/posts'
-    response = requests.get(url)
+    """
+    Function to fetch and save posts to a CSV file
+    """
+    response = requests.get('https://jsonplaceholder.typicode.com/posts')
     status_code = response
     if status_code == 200:
         json_posts = response.json()
