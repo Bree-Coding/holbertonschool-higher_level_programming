@@ -4,7 +4,6 @@ Functions that fetch and print posts from the API and save them to a CSV file
 """
 
 
-
 import requests
 import csv
 
