@@ -36,7 +36,3 @@ def fetch_and_save_posts():
                 filtered = {key: post[key] for key in ['id', 'title', 'body']}
                 writer.writerow(filtered)
 
-
-if __name__ == '__main__':
-    fetch_and_print_posts()
-    fetch_and_save_posts()
