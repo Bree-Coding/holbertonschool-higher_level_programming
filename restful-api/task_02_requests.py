@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-"""
-Function to fetch and print posts from the API
-"""
 import requests
 import csv
 
@@ -29,10 +26,11 @@ def fetch_and_save_posts():
     if status_code == 200:
         json_posts = response.json()
         with open('posts.csv', 'w') as file:
-            writer = csv.DictWriter(file, fieldnames=['userId', 'id', 'title', 'body'])
+            writer = csv.DictWriter(file, fieldnames=['id', 'title', 'body'])
             writer.writeheader()
             for post in json_posts:
                 writer.writerow(post)
+
 
 if __name__ == '__main__':
     fetch_and_print_posts()
