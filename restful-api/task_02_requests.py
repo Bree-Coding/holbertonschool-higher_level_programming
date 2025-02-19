@@ -23,7 +23,7 @@ def fetch_and_save_posts():
     Function to fetch and save posts to a CSV file
     """
     response = requests.get('https://jsonplaceholder.typicode.com/posts')
-    status_code = response
+    status_code = response.status_code
     if status_code == 200:
         json_posts = response.json()
         with open('posts.csv', 'w') as file:
