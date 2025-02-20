@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Module for the Flask API"""
 from flask import Flask, jsonify, request
-from app import routes
 
 """Initialize the Flask application"""
 app = Flask(__name__)
