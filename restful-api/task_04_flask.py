@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-
+"""Module for the Flask API"""
 from flask import Flask, jsonify, request
+from app import routes
 
 """Initialize the Flask application"""
 app = Flask(__name__)
@@ -35,7 +36,7 @@ def user(username):
     if info:
         return jsonify(info)
     else:
-        return '"error": "User not found"', 404
+        return jsonify({"error": "User not found"}), 404
 
 
 @app.route('/add_user', methods=['POST'])
@@ -45,7 +46,9 @@ def add_user():
     username = user_data.get('username')
     if not username:
         return jsonify({"error": "Username is required"}), 400
-    return jsonify({"message": "User added", "user": users[username]})
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
+    return jsonify({"message": "User added", "user": users[username]}, 201)
 
 
 """run the flask app"""
