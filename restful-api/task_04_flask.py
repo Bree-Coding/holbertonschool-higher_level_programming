@@ -2,7 +2,6 @@
 """Module for the Flask API"""
 from flask import Flask, jsonify, request
 
-"""Initialize the Flask application"""
 app = Flask(__name__)
 users = {}
 
