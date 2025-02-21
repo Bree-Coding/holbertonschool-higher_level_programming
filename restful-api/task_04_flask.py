@@ -31,12 +31,11 @@ def status():
 @app.route('/users/<username>')
 def user(username):
     """Route to get the data about specific user by username"""
-    info = users.get(username)
-    if info:
-        return jsonify(info)
+    if username:
+        return jsonify(users[username])
     else:
         return jsonify({"error": "User not found"}), 404
-
+ 
 
 @app.route('/add_user', methods=['POST'])
 def add_user():
@@ -47,7 +46,7 @@ def add_user():
         return jsonify({"error": "Username is required"}), 400
     if not username:
         return jsonify({"error": "Username is required"}), 400
-    return jsonify({"message": "User added", "user": users[username]}, 201)
+    return jsonify({"message": "User added", "user": users[username]}), 201
 
 
 """run the flask app"""
