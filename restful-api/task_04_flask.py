@@ -38,10 +38,9 @@ def user(username):
 def add_user():
     """Route to add a new user"""
     user_data = request.get_json()
-    username = user_data["username"]
     if not user_data:
         return jsonify({"error": "Username is required"}), 400
-    if username not in user_data:
+    if "username" not in user_data:
         return jsonify({"error": "Username is required"}), 400
     return jsonify({"message": "User added", "user": user_data}), 201
 
