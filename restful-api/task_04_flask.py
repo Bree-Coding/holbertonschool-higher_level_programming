@@ -46,7 +46,7 @@ def add_user():
     if not username:
         return jsonify({"error": "Username is required"}), 400
     username = user_data.get('username')
-    return jsonify({"message": "User added", "user": users[username]}), 201
+    return jsonify({"message": "User added", "user": user_data}), 201
 
 
 """run the flask app"""
