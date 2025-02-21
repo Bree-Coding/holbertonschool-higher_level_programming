@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module for the Flask API"""
 from flask import Flask, jsonify, request
-
+ 
 app = Flask(__name__)
 users = {}
 
@@ -41,6 +41,9 @@ def add_user():
         return jsonify({"error": "Username is required"}), 400
     if "username" not in user_data:
         return jsonify({"error": "Username is required"}), 400
+    
+    username = user_data["username"]
+    users[username] = user_data
     return jsonify({"message": "User added", "user": user_data}), 201
 
 
