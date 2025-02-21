@@ -41,11 +41,11 @@ def user(username):
 def add_user():
     """Route to add a new user"""
     user_data = request.get_json()
-    username = user_data.get('username')
     if username not in user_data:
         return jsonify({"error": "Username is required"}), 400
     if not username:
         return jsonify({"error": "Username is required"}), 400
+    username = user_data.get('username')
     return jsonify({"message": "User added", "user": users[username]}), 201
 
 
