@@ -4,9 +4,6 @@ from flask import Flask, jsonify, request
 
 """Initialize the Flask application"""
 app = Flask(__name__)
-
-
-"""Dictionary to store users data"""
 users = {}
 
 
@@ -19,7 +16,7 @@ def home():
 @app.route('/data')
 def data():
     """Route to get the list of users"""
-    return jsonify(list(users.keys()))
+    return jsonify([key for key in users])
 
 
 @app.route('/status')
@@ -41,11 +38,11 @@ def user(username):
 def add_user():
     """Route to add a new user"""
     user_data = request.get_json()
+    username = user_data["username"]
     if not user_data:
         return jsonify({"error": "Username is required"}), 400
     if username not in user_data:
         return jsonify({"error": "Username is required"}), 400
-    username = user_data.get('username')
     return jsonify({"message": "User added", "user": user_data}), 201
 
 
