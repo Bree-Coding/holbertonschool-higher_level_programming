@@ -31,7 +31,7 @@ def status():
 @app.route('/users/<username>')
 def user(username):
     """Route to get the data about specific user by username"""
-    if username:
+    if username in users:
         return jsonify(users[username])
     else:
         return jsonify({"error": "User not found"}), 404
@@ -42,7 +42,7 @@ def add_user():
     """Route to add a new user"""
     user_data = request.get_json()
     username = user_data.get('username')
-    if not username:
+    if username not in user_data:
         return jsonify({"error": "Username is required"}), 400
     if not username:
         return jsonify({"error": "Username is required"}), 400
